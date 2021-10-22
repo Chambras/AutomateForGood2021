@@ -68,9 +68,10 @@ execute 'kafkaPermissions' do
   action :run
 end
 
+# https://solaceproducts.github.io/pubsubplus-connector-kafka-source/downloads/pubsubplus-connector-kafka-source-2.1.0.zip
 remote_file 'Solace Connector' do
   path '/tmp/solace-connector.zip'
-  source 'https://solaceproducts.github.io/pubsubplus-connector-kafka-source/downloads/pubsubplus-connector-kafka-source-2.0.2.zip'
+  source "https://solaceproducts.github.io/pubsubplus-connector-kafka-source/downloads/pubsubplus-connector-kafka-source-#{node['kafkaServer']['solaceCoonector']}.zip"
   action :create
 end
 
@@ -83,9 +84,9 @@ archive_file 'Unpack Solace Connector and its Dependencies' do
 end
 
 execute 'Copy Solace Connector and its Dependencies' do
-  command 'mv /tmp/solace-connector/pubsubplus-connector-kafka-source-2.0.2/lib/*.jar /opt/kafka/libs/'
+  command "mv /tmp/solace-connector/pubsubplus-connector-kafka-source-#{node['kafkaServer']['solaceCoonector']}/lib/*.jar /opt/kafka/libs/"
   action :run
-  not_if { ::File.exist?('/opt/kafka/libs/pubsubplus-connector-kafka-source-2.0.2.jar') }
+  not_if { ::File.exist?("/opt/kafka/libs/pubsubplus-connector-kafka-source-#{node['kafkaServer']['solaceCoonector']}.jar") }
 end
 
 template 'Configure Solace Connector in Stand Alone mode' do

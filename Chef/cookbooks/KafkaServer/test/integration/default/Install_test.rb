@@ -36,7 +36,7 @@ describe service('kafka') do
   it { should be_running }
 end
 
-describe file('/opt/kafka/libs/pubsubplus-connector-kafka-source-2.0.2.jar') do
+describe file('/opt/kafka/libs/pubsubplus-connector-kafka-source-2.1.0.jar') do
   it { should exist }
 end
 
