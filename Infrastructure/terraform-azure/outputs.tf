@@ -46,15 +46,3 @@ output "databricks_ws_id" {
   value       = azurerm_databricks_workspace.databricksWokspace.workspace_id
   description = "The unique identifier of the databricks workspace in Databricks control plane."
 }
-
-/*
-output "adlsFyleSytemID" {
-  value       = azurerm_storage_data_lake_gen2_filesystem.ADLSFileSystemTFMS.id
-  description = "ADLS ID."
-}
-
-output "vNetID" {
-  value       = azurerm_virtual_network.genericVNet.id
-  description = "VNet ID."
-}
-*/

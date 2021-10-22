@@ -9,9 +9,9 @@ sol.host=<%= @SWIMEndpoint %>:<%= node[:kafkaServer][:SWIMEndpointPort] %>
 sol.username=<%= @SWIMUserNaMe %>
 sol.password=<%= @Password %>
 sol.vpn_name=<%= node[:kafkaServer][:SWIMVPN]  %>
-sol.topics=soltest
 sol.queue=<%= @SWIMQueue %>
 sol.message_callback_on_reactor=false
+# sol.topics=soltest
 
 #sol.message_processor_class=com.solace.source.connector.msgprocessors.SolaceSampleKeyedMessageProcessor
 sol.message_processor_class=com.solace.connector.kafka.connect.source.msgprocessors.SolSampleSimpleMessageProcessor
