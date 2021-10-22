@@ -78,7 +78,7 @@ There are 2 GitHub Actions Workflows that are used to automate the Infrastructur
 
 ![Chef-ApacheKafka](Diagrams/Chef-ApacheKafka.png)
 
-- **Terraform-Azure** - Performs Terraform deployment using Terraform Cloud as remote state. It also creates a Databricks cluster and deploys a starter python notebook to test the connectivity to the Kafka server and retrieves the messages.
+- **Terraform-Azure** - Performs Terraform deployment using Terraform Cloud as remote state. It also creates a Databricks cluster and deploys a starter python notebook to test the connectivity to the Kafka server and retrieves the messages. All the infrastructure is created with proper naming convention and tagging.
 
 ![Terraform-Azure](Diagrams/Terraform-Azure.png)
 
